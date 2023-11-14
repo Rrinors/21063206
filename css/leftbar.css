@@ -1,0 +1,42 @@
+.leftbar {
+    position: fixed;
+    top: 170px;
+    left: 1px;
+    width: 160px;
+    background-color: white;
+}
+
+.leftbar ul {
+    list-style: none;
+}
+
+@keyframes fadeInDown {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+}
+
+.leftbar li {
+    animation: fadeInDown 0.5s forwards;
+}
+
+.leftbar a {
+    text-decoration: none;
+    display: block;
+    padding-bottom: 15px;
+    color: black;
+}
+
+.leftbar a:hover {
+    background-color: #ddd;
+}
+
+.leftbar p {
+    margin-left: 40px;
+    font-weight: bolder;
+}

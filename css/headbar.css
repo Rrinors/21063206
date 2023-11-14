@@ -1,0 +1,32 @@
+.headbar {
+    background-color:blueviolet;
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+    margin: 0;
+    padding-left: 50px;
+    padding-top: 5px;
+}
+
+.headbar ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.headbar li {
+    margin: 10px 10px;
+}
+
+.headbar a {
+    color:white;
+    text-decoration: none;
+}
+
+.headbar p {
+    color:white;
+    font-weight: bolder;
+    font-size: x-large;
+    margin: 8px;
+}

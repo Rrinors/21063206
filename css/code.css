@@ -1,0 +1,15 @@
+pre {
+    background-color: aliceblue;
+    padding: 20px;
+    overflow-x: auto;
+    overflow-y: auto;
+    max-width: 100%;
+    position: relative;
+    line-height: 1.5;
+}
+  
+code {
+    display: block;
+    white-space: pre;
+    font-family: 'Fira Code';
+}
