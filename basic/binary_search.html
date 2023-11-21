@@ -68,10 +68,25 @@ int find(std::vector&lt;int&gt; a, int v) {
     <p>二分法的运用不止于此，接下来介绍几个其他应用。</p>
     <h2>二分答案</h2>
     <p>解题的时候往往会考虑枚举答案然后检验枚举的值是否正确。若满足单调性，则满足使用二分法的条件。把这里的枚举换成二分，就变成了「二分答案」。</p>
-    <h3>例题1</a></h3>
-    <p>给定一个序列 $a_1,a_2,\dots,a_n$，你有 $k$ 次操作机会，每次操作可以选择一个数将其减 $1$，使序列中的最大值最小化。</p>
-    <p>（$1\leq n\leq 10^6$，$1\leq a_i,k\leq 10^9$）。</p>
+    <h3>例题</a></h3>
+    <p>给定一个序列 $a_1,a_2,\dots,a_n$，你有 $k$ 次操作机会，每次操作可以选择一个数将其加 $1$，使序列中的最小值最大化。</p>
+    <p>（$1\leq n\leq 10^6$，$1\leq a_i,k\leq 10^8$）。</p>
+    <p>这个问题直接做具有一定难度。我们发现，最终的答案和操作次数的关系具有单调性。我们可以二分最终的答案，然后 $O(n)$ 判断该答案能否在 $k$ 次操作内得到，这样就可以在 $O(n\log V)$ 时间内解决。</p>
+    <pre><code>int lo = 1, hi = 2E8;
+while (lo < hi) {
+    int mid = (lo + hi + 1) / 2;
+    long long sum = 0;
+    for (int i = 0; i < n; i++) {
+        sum += std::max(0, mid - a[i]);
+    }
+    if (sum <= k) {
+        lo = mid;
+    } else {
+        hi = mid - 1;
+    }
 
+}
+return lo;</code></pre>
     <br>
     <h1>参考内容</h1>
     <p><a href="https://oi-wiki.org/basic/binary/">OI Wiki</a></p>
