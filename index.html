@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="css/text.css">
     <link rel="stylesheet" href="css/leftbar.css">
     <link rel="stylesheet" href="css/feedback.css">
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 </head>
 <body>
     <div class="headbar">
@@ -17,10 +16,11 @@
             <li><a href="solution/index.html">比赛题解</a></li>
             <li><a href="basic/index.html">算法基础</a></li>
             <li><a href="dp/index.html">动态规划</a></li>
-            <li><a href="string/index.html">字符串</a></li>
-            <li><a href="ds/index.html">数据结构</a></li>
-            <li><a href="graph/index.html">图论</a></li>
-            <li><a href="geometry/index.html">计算几何</a></li>
+            <li>字符串</li>
+            <li>数据结构</li>
+            <li>图论</li>
+            <li>计算几何</li>
+            <li><a href="form.html">新增</a></li>
         </ul>
     </div>
 
@@ -40,42 +40,7 @@
         <h1>说明</h1>
         <p>在算法研究中，时空效率极为重要，所以一般我们会选择效率较高的编程语言来解决算法问题。</p>
         <p>本站的绝大多数编程实例都将采用 C++ 实现。
-        <br>
-        <br>
-        <h1>评价 & 反馈</h1>
         
-        <form>
-            <div class="rating">
-                <span class="star" data-value="1">&#9733;</span>
-                <span class="star" data-value="2">&#9733;</span>
-                <span class="star" data-value="3">&#9733;</span>
-                <span class="star" data-value="4">&#9733;</span>
-                <span class="star" data-value="5">&#9733;</span>
-                <p>您选中了<span id="rating-value">0</span>星</p >
-            </div>
-            <script>
-                $(document).ready(function () {
-                    $('.star').click(function () {
-                        var rating = $(this).data('value');
-                        $('.star').removeClass('active');
-                        $(this).prevAll().addClass('active');
-                        $(this).addClass('active');
-                        $('#rating-value').text(rating);
-                    });
-                });
-            </script>
-            <br>
-
-            <label for="suggestion">您的建议：</label>
-            <textarea id="suggestion" name="suggestion" rows="4" cols="50" required></textarea>
-            <br>
-
-            <label for="name">如何联系您（可选）：</label>
-            <input type="text" id="name" name="name">
-            <br>
-
-            <input type="submit" value="提交">
-        </form>
     </div>
 </body>
 </html>
