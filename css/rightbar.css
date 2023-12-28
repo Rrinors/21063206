@@ -1,0 +1,22 @@
+.rightbar {
+    position: fixed;
+    top: 300px;
+    right: 100px;
+    width: 160px;
+    background-color: white;
+}
+
+.rightbar ul {
+    list-style: none;
+}
+
+.rightbar a {
+    text-decoration: none;
+    display: block;
+    padding-bottom: 15px;
+    color: black;
+}
+
+.rightbar a:hover {
+    color: red;
+}

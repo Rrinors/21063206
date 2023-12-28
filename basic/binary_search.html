@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../css/text.css">
     <link rel="stylesheet" href="../css/leftbar.css">
     <link rel="stylesheet" href="../css/code.css">
+    <link rel="stylesheet" href="../css/rightbar.css">
     <script type="text/javascript" async
         src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
     </script>
@@ -19,7 +20,7 @@
           }
         });
     </script>
-      
+    <script src="../js/rightbar.js"></script>
 </head>
 <body>
     <div class="headbar">
@@ -43,7 +44,11 @@
         </ul>
     </div>
 
+    <div class="rightbar" id="rightbar">
+    </div>
+
     <div class="text">
+        <pos id="引入"></pos>
         <h1>引入</h1>
         <p>二分是一个非常基础但实用性很广的算法。二分基于分治的思想，每次处理会将问题的规模减小一半。</p>
         <p>最常见的，就是查找有序数组中的给定元素。我们可以通过比较中点和给定元素大小关系，来决定下一次比较的区间。</p>
@@ -64,6 +69,7 @@ int find(std::vector&lt;int&gt; a, int v) {
 }</code></pre>
     <p>我们发现，每循环一次，区间长度减半，因此这个过程的时间复杂度为 $O(n\log n)$。</p>
     <br>
+    <pos id="扩展应用"></pos>
     <h1>扩展应用</h1>
     <p>二分法的运用不止于此，接下来介绍几个其他应用。</p>
     <h2>二分答案</h2>
@@ -88,6 +94,7 @@ while (lo < hi) {
 }
 return lo;</code></pre>
     <br>
+    <pos id="参考内容"></pos>
     <h1>参考内容</h1>
     <p><a href="https://oi-wiki.org/basic/binary/">OI Wiki</a></p>
 </div>
