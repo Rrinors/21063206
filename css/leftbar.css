@@ -30,10 +30,12 @@
     display: block;
     padding-bottom: 15px;
     color: black;
+    transition: transform 0.7s ease;
 }
 
 .leftbar a:hover {
-    background-color: #ddd;
+    /* background-color: #ddd; */
+    transform: translateX(10px);
 }
 
 .leftbar p {
