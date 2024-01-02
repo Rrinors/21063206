@@ -32,3 +32,19 @@
     font-size: xx-large;
     margin: 8px;
 }
+
+.add {
+    display: inline-block;
+    width: 512px;
+    height: 512px;
+    background: url(../image/add.png) -0 41px;
+    zoom: 0.03;
+}
+
+.return {
+    display: inline-block;
+    width: 512px;
+    height: 512px;
+    background: url(../image/return.png) -0 12px;
+    zoom: 0.03;
+}
