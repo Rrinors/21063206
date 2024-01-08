@@ -4,9 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>新增文章</title>
     <link rel="stylesheet" href="css/headbar.css">
-    <link rel="stylesheet" href="css/text.css">
-    <link rel="stylesheet" href="css/leftbar.css">
-    <link rel="stylesheet" href="css/feedback.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 </head>
 <body>
     <div class="headbar">
@@ -25,24 +23,83 @@
     </div>
 
     <div class="text">
-        <form action="mailto:algorithmclassroom@gmail.com" enctype="text/plain">
-            <h1>文章分类</h1>
-            <input type="radio" name="subject" type="text" value="简介" checked>简介
-            <input type="radio" name="subject" type="text" value="比赛题解">比赛题解
-            <input type="radio" name="subject" type="text" value="算法基础">算法基础
-            <input type="radio" name="subject" type="text" value="动态规划">动态规划
-            <input type="radio" name="subject" type="text" value="字符串">字符串
-            <input type="radio" name="subject" type="text" value="数据结构">数据结构
-            <input type="radio" name="subject" type="text" value="图论">图论
-            <input type="radio" name="subject" type="text" value="计算几何">计算几何
+        <form action="#" id="myForm">
+            <h1>反馈类型</h1>
+            <select>
+            <option >内容有误</option>
+            <option >内容补充</option>
+            <option >其他建议</option>
+            </select>
+            <h1>反馈部分（至少选择一项）</h1>
+            <input type="checkbox" class="part" value="简介">简介
+            <input type="checkbox" class="part" value="比赛题解">比赛题解
+            <input type="checkbox" class="part" value="算法基础">算法基础
+            <input type="checkbox" class="part" value="动态规划">动态规划
+            <input type="checkbox" class="part" value="字符串">字符串
+            <input type="checkbox" class="part" value="数据结构">数据结构
+            <input type="checkbox" class="part" value="图论">图论
+            <input type="checkbox" class="part" value="计算几何">计算几何
             <br>
-            <h1>文章内容</h1>
-            <textarea name="body" rows="30" cols="100"></textarea>
+            <h1>反馈内容</h1>
+            <textarea name="body" rows="15" cols="40" id="textarea" placeholder="至少写1个字..."></textarea>
+            <p class="cntnum" id="cntnum">当前已输入 0 个字</p>
+            <br>
+            <h1>您的学习目的</h1>
+            <input type="radio" name="purpose" id="purpose" checked>工作面试
+            <input type="radio" name="purpose" id="purpose">算法竞赛
+            <br>
+            <h1>如何联系您（选填）</h1>
+            <input type="text">
             <br>
             <br>
             <input type="submit">
         </form>
     </div>
+
+    <script>
+        $(document).ready(function() {
+            $("#textarea").on("input", function() {
+                var text = $(this).val();
+                var count = text.length;
+                $("#cntnum").text("当前已输入 " + count + " 个字");
+                if (count < 1) {
+                    $("#myForm").attr("data-valid", "false");
+                } else {
+                    $("#myForm").attr("data-valid", "true");
+                }
+            });
+
+            $("#myForm").submit(function(event) {
+                event.preventDefault();
+                if (validateForm()) {
+                    alert("提交成功！");
+                }
+            });
+    
+            function validateForm() {
+                var isValid = true;
+                if (!validatePart()) {
+                    isValid = false;
+                }
+                if ($("#myForm").attr("data-valid") !== "true") {
+                    alert("反馈内容不能为空！");
+                    isValid = false;
+                }
+                return isValid;
+            }
+    
+            function validatePart() {
+                var box = $(".part:checked");
+                var count = box.length;
+                if (count === 0) {
+                    alert("反馈部分不能为空");
+                    return false;
+                } else {
+                    return true;
+                }
+            }
+        });
+    </script>
 
 </body>
 </html>
